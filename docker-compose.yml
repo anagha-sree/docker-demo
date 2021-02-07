@@ -7,8 +7,8 @@ services:
      ports:
        - "3306:3306"
      environment:
-       MYSQL_ROOT_PASSWORD: password
-       MYSQL_PASSWORD: password
+       MYSQL_ROOT_PASSWORD: root
+       MYSQL_PASSWORD: root
        MYSQL_DATABASE: DockerStudentDB
        MYSQL_HOST: localhost
   user-mongo:
@@ -38,7 +38,7 @@ services:
      depends_on:
        - user-mongo
      ports:
-       - "8083:8083"
+       - "8084:8084"
      network_mode: host
      restart: always
        
