@@ -6,7 +6,6 @@ services:
 stages:
   - clean
   - compile
-  - test
   - build
 
 maven-clean:
@@ -17,13 +16,9 @@ maven-compile:
   stage: compile
   script: "mvn compile"
 
-maven-test:
-  stage: test
-  script: "mvn test"
-  
 maven-build:
   stage: build
-  script: "mvn package"
+  script: "mvn package -DskipTests"
   
 variables:
   MYSQL_DATABASE: springDB
