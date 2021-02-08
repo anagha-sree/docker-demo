@@ -4,16 +4,21 @@ services:
      - "mysql:5.7"
 
 stages:
-  - test
+  - clean
+  - compile
   - build
 
-maven-test:
-  stage: test
-  script: "mvn test"
-  
+maven-clean:
+  stage: clean
+  script: "mvn clean"
+
+maven-compile:
+  stage: compile
+  script: "mvn compile"
+
 maven-build:
   stage: build
-  script: "mvn package"
+  script: "mvn package -DskipTests"
   
 variables:
   MYSQL_DATABASE: springDB
