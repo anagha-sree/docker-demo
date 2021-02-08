@@ -4,8 +4,18 @@ services:
      - "mysql:5.7"
 
 stages:
+  - clean
+  - compile
   - test
   - build
+
+maven-clean:
+  stage: clean
+  script: "mvn clean"
+
+maven-compiler:
+  stage: compile
+  script: "mvn compile"
 
 maven-test:
   stage: test
