@@ -13,7 +13,7 @@ maven-clean:
   stage: clean
   script: "mvn clean"
 
-maven-compiler:
+maven-compile:
   stage: compile
   script: "mvn compile"
 
