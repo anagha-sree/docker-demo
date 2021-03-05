@@ -35,10 +35,8 @@ public class StudentController {
 		return new ResponseEntity<List<Student>>(studentService.getAllStudents(),HttpStatus.OK);
 	}
 	
-	@PostMapping("/{studentname}")
-	public ResponseEntity<Student> addStudent(@PathVariable("studentname") String studentname) {
-		
-		student.setStudentName(studentname);
+	@PostMapping
+	public ResponseEntity<Student> addStudent(@RequestBody Student student) {
 		return new ResponseEntity<Student>(studentService.addStudent(student),HttpStatus.CREATED);
 	}
 	

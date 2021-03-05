@@ -12,7 +12,6 @@ import org.springframework.stereotype.Component;
 public class Student {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
 	private String studentId;
 	private String studentName;
 	
